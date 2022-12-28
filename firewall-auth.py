@@ -201,7 +201,7 @@ def login():
     postconn.close()
 
   # Look for the keepalive URL
-  keepaliveMatch = re.search(r"location.href=\"(.+?)\"", postData)
+  keepaliveMatch = re.search(r"a.href=\"(.+?)\"", postData)
   if keepaliveMatch is None:
     # Whoops, unsuccessful -- probably the username and password didn't match
     logger.fatal("Authentication unsuccessful, check your username and password.")
