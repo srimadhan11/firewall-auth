@@ -23,18 +23,20 @@
 # FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 # OTHER DEALINGS IN THE SOFTWARE.
 
+import atexit
+import gc
 import getpass
 import http.client
-from urllib.parse import urlencode, urlparse, ParseResult
-import re
-from optparse import OptionParser
-import sys
 import logging
-import time
-import atexit
-import socket
-import gc
 import netrc
+import re
+import socket
+import sys
+import time
+
+from optparse import OptionParser
+from urllib.parse import urlencode, urlparse, ParseResult
+
 
 class FirewallState:
   Start, LoggedIn, End = range(3)
